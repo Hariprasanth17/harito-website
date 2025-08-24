@@ -1,0 +1,34 @@
+* {
+    color: black;
+}
+
+.big-icon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    margin-right: -15px;
+    color: #7E57C2;
+}
+
+.text-forgot {
+    color: #7E57C2;
+    font-size: 14px;
+    font-weight: 500
+}
+
+.btn-purple {
+    background-color: #7E57C2;
+    color: white;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+.col-lg-6,
+.col-md-6,
+.col-12 {
+    transition: all 0.4s ease-in-out;
+}

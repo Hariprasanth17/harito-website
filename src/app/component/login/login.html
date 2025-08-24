@@ -1,0 +1,77 @@
+<div class="container-fluid vh-100 ">
+  <div class="row vh-100 d-flex justify-content-center">
+    <!-- Left Column -->
+    <div class="col-lg-6 col-12 d-flex flex-column bg-white">
+      <div class="d-flex align-items-center p-2 mt-1">
+        <mat-icon class="big-icon mt-3">widgets</mat-icon>
+        <h1 class="fs-4 fw-normal">The<span class="fw-bold">Cube</span>Factory</h1>
+      </div>
+      <form [formGroup]="SignUpForm" (ngSubmit)="onSubmit()" class=" h-100 d-flex justify-content-center p-5">
+        <div class="bg-white w-75 d-flex flex-column gap-3">
+          <div>
+            <h2 class="fw-bolder">Welcom back</h2>
+            <p class="fw-normal text-secondary">Please enter your Details</p>
+          </div>
+          <!-- email -->
+          <div class="d-flex flex-column">
+            <label>Email address</label>
+            <input type="email" class="form-control mt-1" aria-label="email" formControlName="email">
+          </div>
+          @if(SignUpForm.get('email')?.touched && SignUpForm.get('email')?.hasError('required')){
+          <small class="error">Email is required</small>
+          }
+          @if(SignUpForm.get('email')?.touched && SignUpForm.get('email')?.hasError('email')){
+          <small class="error">Please Enter a valid email</small>
+          }
+          <!-- password -->
+          <div class="d-flex flex-column position-relative">
+            <label>Password</label>
+            <input [type]="showPassword ? 'text' : 'password'" class="form-control mt-1 pe-5" aria-label="password"
+              formControlName="password">
+            <span (click)="togglePassword()" class="position-absolute end-0 top-50 pt-1 me-3 text-dark fs-5"
+              style="cursor: pointer;">
+              <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </span>
+          </div>
+          @if(SignUpForm.get('password')?.touched && SignUpForm.get('password')?.hasError('required')){
+          <small class="error">Password is required</small>
+          }
+          @if(SignUpForm.get('password')?.touched && SignUpForm.get('password')?.hasError('minlength')){
+          <small class="error">Password must be at least 6 characters</small>
+          }
+          <!-- check box -->
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="terms">
+              <label class="form-check-label" for="flexCheckDefault">
+                Remember for 30 days
+              </label>
+            </div>
+            <div>
+              <a href="#" class="text-forgot">Forgot Password</a>
+            </div>
+          </div>
+          @if(SignUpForm.get('terms')?.touched && SignUpForm.get('terms')?.invalid ) {
+          <small class="error">You must agree before submitting</small>
+          }
+          <!-- buttons -->
+          <div class="d-grid gap-2">
+            <button class="btn btn-purple p-2" type="submit">Sign in</button>
+            <button class="btn border p-2 mt-3 " type="button">
+              <img [src]="image.login.google" alt="Google logo" class="mx-2" height="20px" width="20px" />
+              Sign in with Google</button>
+          </div>
+          <div class=" d-flex justify-content-center gap-2">
+            <p class="text-secondary">Don't have accout?</p>
+            <a href="#" class="text-forgot" routerLink="/signup">Sign Up</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center vh-100 p-0">
+      <img [src]="image.login.banner" alt="Login Banner" width="100%" height="100%" />
+    </div>
+  </div>
+</div>

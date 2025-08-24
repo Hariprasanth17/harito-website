@@ -1,0 +1,59 @@
+.navbar {
+  background-color: #7E57C2;
+}
+.navbar .nav-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  padding-bottom: 4px;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover { color: #e7d5ea; }
+
+.navbar .nav-link .underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: white;
+}
+
+.navbar .nav-link.active-link .underline {
+  animation: underlineGrow 0.5s ease forwards;
+}
+
+.navbar .nav-link.active-link { color:white; }
+
+@keyframes underlineGrow {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+.heading {
+    background: linear-gradient(135deg, #7E57C2, #eedfea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.home-page {
+    background-size: cover;
+    background: radial-gradient(125% 125% at 50% 90%, #fff 40%, #7c3aed 100%);
+    height: 100vh;
+}
+
+.button {
+    background: linear-gradient(135deg, #5f3b9d, #efecf3);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    transition: transform 0.2s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
