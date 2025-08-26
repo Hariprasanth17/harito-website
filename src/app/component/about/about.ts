@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { SharedModule } from '../../shared/shared-module';
 
 @Component({
   selector: 'app-about',
-  imports: [RouterLink,RouterLinkActive],
+  imports: [SharedModule],
   templateUrl: './about.html',
   styleUrl: './about.css'
 })

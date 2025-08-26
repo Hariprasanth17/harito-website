@@ -35,4 +35,9 @@ export class Login {
       alert("Form Invalid ");
     }
   }
+
+  googleSignIn() {
+  alert("Google Signin");
+}
+
 }

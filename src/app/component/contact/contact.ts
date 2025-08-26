@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { SharedModule } from '../../shared/shared-module';
 
 @Component({
   selector: 'app-contact',
-  imports: [RouterLink,RouterLinkActive],
+  imports: [SharedModule],
   templateUrl: './contact.html',
   styleUrl: './contact.css'
 })

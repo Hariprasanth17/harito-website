@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container vh-100 d-flex flex-column">
+
+    <div class="flex-grow-1 overflow-auto baground-containter p-3">
+        <!-- Input-->
+        <form class="bg-white border-top shadow-sm p-3 position-sticky top-0 w-100"
+          (submit)="$event.preventDefault(); addTodo()">
+            <div class="d-flex gap-2">
+                <input type="text" class="form-control" placeholder="Enter your task..." [formControl]="task" />
+                <button type="submit" class="btn btn-success">Add</button>
+            </div>
+        </form>
+
+        <!-- list -->
+        @for (item of totoList(); track item.id) {
+        <div class="d-flex justify-content-center">
+            <div class="col-12 col-lg-6 d-flex align-items-center todo-list text-white p-2 rounded justify-content-between mt-2"
+                [class.bg-success]="item.isCompleted">
+                <div class="d-flex align-items-center gap-2">
+                    <!-- check box -->
+                    <input class="form-check-input mt-0 p-2" type="checkbox" [checked]="item.isCompleted"
+                        (change)="todo.toggleTodoItem(item.id)" />
+
+                    <label class="form-check-label mb-0"
+                        [class.text-decoration-line-through]="item.isCompleted">{{item.title}}</label>
+                    @if (item.isCompleted) {
+                    <mat-icon>check</mat-icon>
+                    }
+                </div>
+                <button type="button" class="btn btn-sm btn-danger d-flex align-items-center gap-1"
+                    (click)="todo.removeTodoItem(item.id)">
+                    <mat-icon>delete</mat-icon> Delete
+                </button>
+            </div>
+        </div>
+        }
+    </div>

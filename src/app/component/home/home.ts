@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '../../shared/shared-module';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink,RouterModule],
+  imports: [RouterModule,SharedModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

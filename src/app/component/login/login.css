@@ -32,3 +32,17 @@
 .col-12 {
     transition: all 0.4s ease-in-out;
 }
+
+@media screen and (max-width: 480px) {
+
+    .google-btn {
+        font-size: 14px;
+    }
+    form{
+        padding: 0px;
+    }
+    .text-forgot,.form-check-label{
+        font-size: 14px;
+    }
+
+}

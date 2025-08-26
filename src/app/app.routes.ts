@@ -20,6 +20,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./component/contact/contact').then(m => m.Contact)
   },
+  {
+    path: 'todo',
+    loadComponent: () =>
+      import('./component/todo/todo').then(m => m.Todo)
+  },
   { path: 'login', component: Login },
   { path: 'signup', component: Signup },
 
